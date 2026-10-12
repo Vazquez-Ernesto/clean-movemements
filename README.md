@@ -18,7 +18,8 @@ Aplicación de finanzas personales y familiares (web y móvil) con integraciones
 
 | Carpeta | Objetivo |
 |---|---|
-| [spikes/binance-readonly](spikes/binance-readonly/README.md) | Verificar con una cuenta real la lectura de saldos y movimientos de Binance con una key de solo lectura |
+| [spikes/binance-readonly](spikes/binance-readonly/README.md) | ⏸️ En pausa. Verificar con una cuenta real la lectura de saldos y movimientos de Binance con una key de solo lectura |
+| [spikes/mercadopago-readonly](spikes/mercadopago-readonly/README.md) | Verificar qué movimientos de una cuenta personal de Mercado Pago se pueden leer (búsqueda de pagos y reportes) |
 
 ## Stack previsto
 

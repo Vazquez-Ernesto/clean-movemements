@@ -439,7 +439,7 @@ Formato Dado/Cuando/Entonces, pensado para convertirse en pruebas automatizadas.
 |---|---|---|---|
 | **0** | Inspección del repositorio y documentación | — | Este conjunto de documentos ✅ |
 | **1** | Validación de requerimientos, seguridad y modelo financiero | 0 | Aprobación de las decisiones D-01 a D-13 (D-14 puede esperar a la Fase 8); revisión legal inicial |
-| **2** | Estrategia de plataforma y evaluación de integraciones | 1 | ✅ D-02 (Binance) y D-03 (PWA) aprobadas. 🔄 *Spike* de Binance construido, pendiente de ejecución con una cuenta real; luego, *spike* de Mercado Pago para la segunda integración; matriz actualizada |
+| **2** | Estrategia de plataforma y evaluación de integraciones | 1 | ✅ D-02 (Binance) y D-03 (PWA) aprobadas. ⏸️ *Spike* de Binance listo, en pausa (sin acceso a la cuenta). 🔄 *Spike* de Mercado Pago (parte A) listo para ejecutar con la cuenta del usuario; la parte B (OAuth) requiere decidir dónde alojar la URL HTTPS de redirección |
 | **3** | Núcleo financiero y espacios familiares | 1 | Identidad, espacios, permisos, cuentas, activos (multiactivo), movimientos, transferencias manuales, auditoría. AC-01 a AC-04, AC-06, AC-07, AC-11 |
 | **4** | Primera integración realmente viable + importación CSV | 2, 3 | Conexión, consentimiento, secretos cifrados, sincronización inicial e incremental, CSV. AC-05, AC-09 |
 | **5** | Sincronización confiable, deduplicación y conciliación | 4 | Reintentos, conflictos, detección de transferencias, saldo informado frente a calculado. AC-10 |
@@ -456,7 +456,7 @@ Resumen; el detalle y las alternativas están en [DECISIONS.md](DECISIONS.md).
 | ID | Decisión | Propuesta |
 |---|---|---|
 | D-01 | ¿Operaciones financieras de escritura? | No. Solo lectura hasta una nueva decisión. |
-| D-02 | Primera integración automática | ✅ **Aprobada:** Binance (keys de solo lectura). El *spike* confirma o ajusta el alcance. |
+| D-02 | Primera integración automática | ✅ **Aprobada:** Binance (keys de solo lectura). ⏸️ En pausa por falta de acceso a la cuenta; si Mercado Pago resulta viable antes, reabrir. |
 | D-03 | Estrategia web y móvil | ✅ **Aprobada:** PWA con React + TypeScript; React Native solo si se cumplen los disparadores definidos. |
 | D-04 | Tipo de cotización USD por defecto | Pendiente de elección (oficial BNA, mayorista, MEP…), configurable por espacio. |
 | D-05 | Ajuste de conciliación como movimiento | Sí, como operación explícita con motivo, o solo como redefinición del saldo de referencia. |

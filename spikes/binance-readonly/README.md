@@ -3,6 +3,7 @@
 Herramienta descartable para **verificar con una cuenta real** lo que la documentación de Binance dice sobre la lectura de saldos y movimientos. **No es código de producto**: no se reutiliza en el backend (que será Java), solo produce evidencia para [`docs/INTEGRATIONS_ASSESSMENT.md`](../../docs/INTEGRATIONS_ASSESSMENT.md).
 
 - Decisión que la origina: D-02 (Binance como primera integración), aprobada el 2026-10-12.
+- **Estado: ⏸️ en pausa** (sin acceso a la cuenta por ahora). La herramienta está lista y probada para cuando se retome.
 - Requisitos: Node.js 20.6 o superior. **Sin dependencias**: no hace falta `npm install`.
 
 ## Qué verifica

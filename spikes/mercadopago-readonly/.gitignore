@@ -1,0 +1,3 @@
+# Credenciales y resultados con datos de la cuenta: nunca al repositorio.
+.env
+out/
