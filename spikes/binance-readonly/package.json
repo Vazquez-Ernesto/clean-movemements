@@ -1,0 +1,14 @@
+{
+  "name": "binance-readonly-spike",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Spike de solo lectura para evaluar la API de Binance (Fase 2). No es código de producto.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.6"
+  },
+  "scripts": {
+    "start": "node --env-file=.env src/main.js",
+    "test": "node --test"
+  }
+}

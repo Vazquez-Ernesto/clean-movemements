@@ -25,8 +25,8 @@ Estados: **Aceptada** (confirmada por el usuario) · **Propuesta** (recomendaci�
 - **Consecuencias:** Hay que hacer cumplir los límites con herramientas (ADR-007); de lo contrario el monolito se acopla.
 
 ### ADR-003 — Web y móvil con una PWA en React + TypeScript
-- **Estado:** Pendiente de aprobación (D-03).
-- **Decisión propuesta:** Web responsive instalable como PWA. React Native se reevalúa si se cumple alguno de los disparadores de ARCHITECTURE §3.3.
+- **Estado:** Aceptada el 2026-10-12 (D-03).
+- **Decisión:** Web responsive instalable como PWA. React Native se reevalúa si se cumple alguno de los disparadores de ARCHITECTURE §3.3.
 - **Consecuencias:** Sin presencia en tiendas ni push en el MVP; en iOS, el push requerirá la PWA instalada. Se mantiene un paquete TS sin dependencias de DOM para reutilizarlo en el futuro.
 
 ### ADR-004 — Herramientas de frontend
@@ -78,8 +78,8 @@ Estados: **Aceptada** (confirmada por el usuario) · **Propuesta** (recomendaci�
 | ID | Pregunta | Opciones | Recomendación | Afecta a |
 |---|---|---|---|---|
 | **D-01** | ¿Se habilitan operaciones financieras de escritura (pagos, transferencias, trading)? | (a) No, solo lectura; (b) Sí, en una fase posterior con evaluación de seguridad y regulatoria | **(a)** hasta una nueva decisión explícita | Integraciones, permisos de las conexiones |
-| **D-02** | ¿Cuál es la primera integración automática? | (a) Binance (key de solo lectura, documentada); (b) Mercado Pago (OAuth + reportes; cobertura de cuentas personales incierta); (c) ambas en paralelo | **(a)**, con *spike* de (b) en la Fase 2 para decidir la segunda | Roadmap Fase 4; obliga a tener multiactivo en la Fase 3 |
-| **D-03** | Estrategia web y móvil | (a) PWA; (b) React + React Native; (c) PWA empaquetada con Capacitor | **(a)**, con los disparadores de ARCHITECTURE §3.3 | Frontend, costos, notificaciones |
+| **D-02** | ¿Cuál es la primera integración automática? | (a) Binance (key de solo lectura, documentada); (b) Mercado Pago (OAuth + reportes; cobertura de cuentas personales incierta); (c) ambas en paralelo | ✅ **Aprobada el 2026-10-12: (a) Binance.** Su *spike* está en `spikes/binance-readonly/`; Mercado Pago queda como candidata para la segunda integración | Roadmap Fase 4; obliga a tener multiactivo en la Fase 3 |
+| **D-03** | Estrategia web y móvil | (a) PWA; (b) React + React Native; (c) PWA empaquetada con Capacitor | ✅ **Aprobada el 2026-10-12: (a) PWA**, con los disparadores de ARCHITECTURE §3.3 | Frontend, costos, notificaciones |
 | **D-04** | ¿Qué cotización del USD se usa por defecto para valuar? | Oficial minorista (BNA), oficial mayorista (BCRA), MEP, CCL u otra; y si se usa compra, venta o promedio | Elegir **una por defecto y hacerla configurable por espacio**; siempre visible en la valuación. Sugerencia a validar: MEP (refleja mejor el valor de los USD que tienen las familias), con la oficial disponible | Valuación, patrimonio |
 | **D-05** | ¿Se permite el ajuste de conciliación como movimiento? | (a) Sí, como `ADJUSTMENT` explícito con motivo; (b) No: solo redefinir el ancla del saldo; (c) ambas | **(c)**: el usuario elige; ambas auditadas | Movimientos, conciliación |
 | **D-06** | ¿Cómo se reconocen las compras con tarjeta en cuotas? | (a) Gasto total en la fecha de compra; (b) gasto por cuota en cada resumen | **(b)** para los reportes de flujo mensual, mostrando la deuda futura aparte | Tarjetas, reportes |

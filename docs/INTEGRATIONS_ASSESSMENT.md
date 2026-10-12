@@ -45,7 +45,7 @@ Por eso, para cada dato se indica el **tipo de evidencia**:
 
 | Proveedor | Tipo | Mecanismo oficial encontrado | ¿Para cuentas personales? | Estado | Próxima acción |
 |---|---|---|---|---|---|
-| **Binance** | Exchange cripto | API REST con API key firmada; permisos configurables (lectura por defecto) | Sí: la API key la genera el propio usuario | **Parcial** | *Spike* con key de solo lectura de una cuenta del equipo |
+| **Binance** | Exchange cripto | API REST con API key firmada; permisos configurables (lectura por defecto) | Sí: la API key la genera el propio usuario | **Parcial** | Ejecutar el *spike* `spikes/binance-readonly/` con una cuenta real (D-02 aprobada) |
 | **Mercado Pago** | Billetera / PSP | OAuth para terceros y API de reportes ("Todas las transacciones", "Liquidaciones") | Incierto: está orientado a vendedores e integradores | **Parcial** | *Spike* con la cuenta personal de un integrante del equipo y revisión de términos |
 | **Galicia** | Banco | "Open Galicia": APIs para **empresas** clientes con Office Banking | **No**, según la página oficial | **No disponible** | CSV de extractos; seguir el Sistema de Finanzas Abiertas |
 | **Santander** | Banco | No se encontró un portal de APIs para personas. Getnet (cobros) es para comercios | Sin evidencia | **Pendiente** | Confirmar con el banco; CSV |
@@ -88,7 +88,8 @@ Por eso, para cada dato se indica el **tipo de evidencia**:
 | **Límites, costos y requisitos** | Límites por "peso" de solicitud (p. ej. `myTrades` pesa 20, o 5 con `orderId`). No se encontraron costos por usar la API. Según un artículo de seguridad de Binance, las keys sin lista de IP que estén 30 días inactivas se eliminan; **verificar** si sigue vigente. | DOC-IDX ([blog de seguridad](https://www.binance.com/en/blog/security/how-to-use-an-api-key-securely-5-tips-from-binance-8638066848800196896)) |
 | **Restricciones contractuales y riesgos** | Pendiente: revisar los términos sobre el uso de keys por aplicaciones de terceros. Riesgo: una key con más permisos que la lectura permitiría operar; se mitiga rechazando la key si sus permisos no son de solo lectura (PRD FR-IN-04). Restringir la key a la IP de salida del backend reduce el riesgo, pero exige una IP fija (impacto en infraestructura y costo). La API key y su secreto son credenciales: se guardan cifrados (ARCHITECTURE §6.3). | — |
 | **Estado** | **Parcial** | |
-| **Próxima acción** | *Spike* (Fase 2): crear una key de solo lectura en una cuenta del equipo; validar el endpoint de permisos; obtener saldos y 90 días de depósitos, retiros y *trades*; medir el consumo de "peso"; listar qué productos (Convert, P2P, Earn) quedan sin cubrir; revisar los términos. | |
+| **Próxima acción** | Ejecutar el *spike* [`spikes/binance-readonly/`](../spikes/binance-readonly/README.md) con una key de solo lectura de una cuenta del equipo y volcar aquí su reporte. Revisar los términos de uso. | |
+| **Spike** | Construido el 2026-10-12 y probado contra un Binance simulado que verifica firmas y aplica los límites documentados. **Pendiente de ejecución con una cuenta real** (el entorno de la investigación no tiene acceso de red a Binance). Cubre permisos, saldos spot, depósitos, retiros, *trades*, Convert, el límite de 24 h y la estabilidad de identificadores; no cubre P2P, Binance Pay, Funding, Earn ni Futures. | — |
 
 ### 4.2 Mercado Pago
 
